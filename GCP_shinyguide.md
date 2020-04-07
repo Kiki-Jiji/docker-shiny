@@ -4,15 +4,6 @@ This is a walkthrough of getting a shiny app hosted on Google Cloud Platform
 
 In theory if you have a Docker container with a Shiny app within, it should be able to run on Google App Engine, where advantages include management of run time and launching on demand, rather than having to run a Shiny server all the time.
 
-## Docker Locally
-To run in a docker container you need to build and then start the container.
-
-`docker build -t shiny .`
-
-`docker run -p 8000:8080 shiny`
-
-The above example exposes port 8080 in the container on port 8000 in the host, so you will access the application on 8000, even though internally the container is using port 80.
-
 ## GCP App engine
 App Engine doesn't offer a default R environment so you will need to define your own custom runtime. You can see the GCP App Engine [Building Custom Runtimes](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build?hl=en_US#listening_to_port_8080) documentation for more details.
 
