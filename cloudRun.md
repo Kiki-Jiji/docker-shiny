@@ -20,6 +20,11 @@ gcloud builds submit --tag gcr.io/shiny-test-273509/test-cars --timeout=3600
 The first line is generic, the second line is an example. The default cloud build time is 10 minutes. When I tested it it took 45 minutes. `--timeout` 
 allows you to set a custom time such as an hour (e.g 3600)
 
+You can see what containers are available using
+```
+gcloud container images list
+```
+
 
 ```bash
 gcloud run deploy graphviz-web --image gcr.io/PROJECT_ID/graphviz
